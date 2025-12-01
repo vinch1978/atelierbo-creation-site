@@ -1,0 +1,767 @@
+/* ------------------------ */
+/* RESET SIMPLIFIÉ          */
+/* ------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #F5EFE6;   /* beige clair */
+  color: #2C3E3A;
+}
+
+/* ------------------------ */
+/* LIEN D’ÉVITEMENT         */
+/* ------------------------ */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  background: #A8D5BA;
+  color: #2C3E3A;
+  padding: 8px 12px;
+  z-index: 999;
+  transition: top 0.2s;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+/* ------------------------ */
+/* EN-TÊTE                  */
+/* ------------------------ */
+.site-header {
+  background-color: #E4D5C7;   /* beige sable */
+  padding: 10px 0;             /* bandeau plus fin */
+  border-bottom: 4px solid #5C8F7B;
+  position: relative;          /* pour positionner le logo */
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+/* ligne du haut : logo + menu */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;  /* évite le centrage vertical gênant */
+}
+
+.logo {
+  position: relative;
+  padding-left: 260px;   /* on laisse de la place pour le logo à gauche */
+  min-height: 130px;     /* hauteur mini du bandeau */
+}
+
+.logo-mark {
+  font-size: 40px;
+  font-weight: bold;
+  color: #5C8F7B;
+  margin-right: 15px;
+}
+
+.logo-text h1 {
+  font-size: 22px;
+  color: #2C3E3A;
+}
+
+.logo-text p {
+  font-size: 14px;
+  color: #2C3E3A;
+  opacity: 0.8;
+}
+
+/* image du logo */
+.logo-img img {
+  height: 350px;    /* logo bien grand */
+  width: auto;
+  position: absolute;
+  left: 0;
+  bottom: -110px;   /* le fait dépasser sous le bandeau */
+}
+
+main {
+  padding-top: 20px;  /* compense la hauteur du logo */
+}
+
+
+/* ========================= */
+/* MENU DEROULANT=========== */
+/* ========================= */
+
+.main-nav {
+  margin-left: auto;
+}
+
+/* conteneur du menu */
+.dropdown {
+  position: relative;
+}
+
+.logo-img img {
+  height: 350px;        /* adapte selon ton logo */
+  width: auto;         /* garde les proportions */
+  display: block;
+}
+
+/* bouton */
+.dropdown-button {
+  cursor: pointer;
+  background-color: #5C8F7B;
+  color: #FFFFFF;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  display: inline-block;
+}
+
+/* menu caché */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #F5EFE6;
+  border: 2px solid #5C8F7B;
+  border-radius: 6px;
+  padding: 10px 0;
+  min-width: 220px;
+  list-style: none;
+  z-index: 999;
+}
+
+/* liens du menu */
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #2C3E3A;
+}
+
+/* au clic → classe .open s’applique */
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+/* bouton "Menu ▼" */
+.dropdown-button {
+  cursor: pointer;
+  background-color: #5C8F7B;
+  color: #FFFFFF;
+  padding: 6px 10px;
+  border-radius: 4px;
+  user-select: none;
+  font-size: 16px;
+  display: inline-block;
+  border: none;
+}
+
+/* sous-menu vertical (caché par défaut) */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #F5EFE6;   /* fond du menu en beige clair */
+  border: 2px solid #5C8F7B;
+  border-radius: 6px;
+  padding: 10px 0;
+  min-width: 220px;
+  z-index: 999;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #2C3E3A;
+}
+
+.dropdown-menu li a:hover,
+.dropdown-menu li a:focus {
+  background-color: #5C8F7B;
+  color: #FFFFFF;
+}
+
+/* affichage du menu via JS (classe .open) */
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+/* ------------------------ */
+/* BANNIÈRE / HERO          */
+/* ------------------------ */
+.hero {
+  padding: 0;
+  text-align: center;
+  background-color: #E4D5C7;  
+}
+
+.hero-content h2 {
+  font-size: 32px;
+  color: #2C3E3A;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  max-width: 700px;
+  margin: 0 auto 25px auto;
+  font-size: 18px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: #5C8F7B;
+  color: #FFFFFF;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #477060;
+}
+
+
+/* ------------------------ */
+/* CONTENU PRINCIPAL        */
+/* ------------------------ */
+/* --- conteneur des deux machines cote a cote --- */
+
+.section-inner {
+  padding: 40px 0;
+  margin-left: 40px;
+  margin-right: 40px;
+  text-align: justify;
+}
+
+
+.machines-grid {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap; /* pour mobile */
+}
+
+/* --- chaque bloc machine page acceuil --- */
+.machine-box {
+  flex: 1;
+  min-width: 300px;
+  background-color: #F5EFE6; /* beige clair */
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #E4D5C7;
+}
+
+/* --- image --- */
+.machine-img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+/* --- titres --- */
+.machine-box h3 {
+  margin-bottom: 10px;
+  color: #5C8F7B;
+}
+
+/* --- listes --- */
+.machine-box ul {
+  margin-left: 1.5em;
+  margin-bottom: 15px;
+}
+
+/* --- responsive : mobile --- */
+@media (max-width: 768px) {
+  .machines-grid {
+    flex-direction: column;
+  }
+}
+
+
+/* Alternance de fonds pour les sections */
+main section:nth-of-type(odd) {
+  background-color: #F5EFE6;   /* beige clair */
+}
+
+main section:nth-of-type(even) {
+  background-color: #E4D5C7;   /* beige sable */
+}
+
+main h2 {
+  font-size: 28px;
+  color: #5C8F7B;
+  margin-bottom: 10px;
+}
+
+/* ------------------------ */
+/* ACCESSIBILITÉ FOCUS      */
+/* ------------------------ */
+:focus {
+  outline: 3px solid #2C3E3A;
+  outline-offset: 3px;
+}
+
+/* ------------------------ */
+/* PIED DE PAGE             */
+/* ------------------------ */
+.site-footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #E4D5C7;  /* rappel du beige sable */
+  border-top: 4px solid #5C8F7B;
+  color: #2C3E3A;
+}
+
+/* bouton pour envoyer mail*/
+.btn-contact {
+  display: inline-block;
+  background-color: #5C8F7B;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.btn-contact:hover {
+  background-color: #477060;
+}
+
+.contact-center {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* ====== SECTION CREATIONS ====== */
+.creation-block {
+  display: flex;
+  align-items: center;         
+  justify-content: center;     
+  gap: 25px;                   
+  margin: 40px auto;           
+  max-width: 1000px;           
+}
+
+.creation-img {
+  width: 40%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid #E4D5C7;
+  flex-shrink: 0;
+}
+
+.creation-text {
+  flex: 1;
+  text-align: center;         
+}
+
+.creation-block.left {
+  flex-direction: row;
+}
+
+.creation-block.right {
+  flex-direction: row-reverse;
+}
+
+.creation-block.left .creation-text {
+  margin-left: 10px;
+}
+
+.creation-block.right .creation-text {
+  margin-right: 10px;
+}
+
+
+/* responsive : sur mobile, tout s'empile */
+@media (max-width: 768px) {
+  .creation-block {
+    flex-direction: column;
+     max-width: 100%;
+  }
+
+  .creation-text {
+    margin: 0;
+  }
+
+  .creation-img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+/*---page boule personnalisable---*/
+
+.presentation img {
+  text-align: center;  
+  width: 200px !important; /* Taille de l’image */
+  height: auto;      /* Garde les proportions */
+  border-radius: 8px;  /* Optionnel, joli arrondi */
+  margin-top: 20px;
+}
+
+.presentation{
+  text-align: center;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+/* Conteneur global */
+.autre-photo {
+  max-width: 1100px;
+  margin: 40px auto;
+}
+
+/* C’est le FIGURE qui devient une grille */
+.autre-photo figure {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 colonnes => 2 lignes avec 10 images */
+  gap: 20px;
+  align-items: start;
+}
+
+/* Les images occupent chaque cellule */
+.autre-photo figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid #E4D5C7;
+  object-fit: cover;
+}
+
+/* La légende en dessous, sur toute la largeur */
+.autre-photo figure figcaption {
+  grid-column: 1 / -1;       /* prend toute la largeur de la grille */
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* bouton amazon */
+.amazon-btn-wrapper {
+  text-align: center;
+  margin: 30px 0;
+}
+
+/* Bouton Amazon personnalisé */
+.amazon-btn {
+  display: inline-block;
+  background-color: #5C8F7B;     /* ton vert foncé */
+  color: #ffffff;
+  padding: 12px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+  border: 2px solid #477060;
+}
+
+.amazon-btn:hover {
+  background-color: #477060;     /* vert plus sombre */
+  transform: scale(1.05);        /* petit zoom élégant */
+}
+
+/*----- page boule noel tableau differents design------*/
+/* ----- Galerie Amazon ----- */
+.amazon-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+.amazon-item {
+  background: #FFF;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  border: 2px solid #E4D5C7;
+}
+
+.amazon-item img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+/*--------mets toutes les photos a la meme taill-------*/
+.amazon-item img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;   /* recadre proprement sans déformer */
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* ----- Bouton Amazon petit ----- */
+.amazon-btn-small {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #5C8F7B;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.amazon-btn-small:hover {
+  background-color: #5C8F7B;
+}
+
+/*--------- page bougeoir,boule noel pour les 2 blocs sans puce------*/
+.listing {
+  margin-left: 0;
+  padding-left: 0;
+  line-height: 1.7;
+  text-align: center;
+
+}
+
+
+/*--------  page decorations de noel  ----------*/
+
+/* Bloc image + texte côte à côte */
+.decor-box {
+  display: flex;
+  gap: 40px; /* au lieu de 25 */
+  align-items: center;
+  margin: 40px 20px; /* cohérence */
+}
+
+/* Image */
+.decor-img {
+  width: 55%;           /* un peu plus large dans le bloc */
+  max-width: 520px;     /* limite haute confortable sur grand écran */
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid #E4D5C7;
+}
+
+/* Texte */
+.decor-text {
+  flex: 1;
+  text-align: justify;
+   padding-right: 40px; /* espace à droite */
+}
+
+.decor-text ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.decor-text li {
+  margin-bottom: 5px;
+}
+
+/* Adaptation mobile */
+@media (max-width: 768px) {
+  .decor-box {
+    flex-direction: column;
+  }
+
+  .decor-img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/*------Boule noel personnalisé----------*/
+
+.presentation-boules-personnalise {
+  display: flex;
+  justify-content: center; /* centre l'ensemble */
+  align-items: center;
+  gap: 150px; /* espace entre les images */
+  margin: 20px 0;
+}
+
+/* On annule les styles globaux qui étirent les images */
+.presentation-boules-personnalise img {
+  width: auto !important;   /* garde la taille d’origine */
+  height: auto !important;
+  max-width: 180px;         /* limite la taille si besoin (tu peux ajuster) */
+  border-radius: 8px;       /* optionnel : joli arrondi */
+}
+/* ============================= */
+/*  FIX RESPONSIVE SECTION CREATIONS  */
+/* ============================= */
+
+/* ============================= */
+/*   RESPONSIVE GLOBAL (< 768px) */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  /* Empêcher le scroll horizontal */
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Conteneur plus simple sur mobile */
+  .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  /* En-tête : tout centré, plus compact */
+  .header-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo {
+    padding-left: 0;
+    min-height: auto;
+    margin-bottom: 10px;
+  }
+
+  .logo-img img {
+    position: static;
+    height: 130px;
+    width: auto;
+    margin: 5px auto 10px auto;
+    display: block;
+  }
+
+  .logo-text h1 {
+    font-size: 18px;
+  }
+
+  .logo-text p {
+    font-size: 13px;
+  }
+
+  .main-nav {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  /* BOUTON MENU centré */
+  .dropdown {
+    text-align: center;
+  }
+
+  .dropdown-button {
+    width: auto;
+  }
+
+  .dropdown-menu {
+    right: 50%;
+    transform: translateX(50%);
+    min-width: 220px;
+    max-width: 90vw; /* évite de dépasser la largeur écran */
+  }
+
+  /* HERO plus légère */
+  .hero {
+    padding: 20px 0;
+  }
+
+  .hero-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+    margin: 0 auto 15px auto;
+    padding: 0 5px;
+  }
+
+  /* Sections : moins de marges latérales */
+  .section-inner {
+    padding: 25px 0;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  /* Grille des machines en colonne */
+  .machines-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .machine-box {
+    min-width: auto;
+  }
+
+  /* ====== SECTION CREATIONS ====== */
+
+  .creation-block,
+  .creation-block.left,
+  .creation-block.right {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+    margin: 25px auto;
+    gap: 15px;
+  }
+
+  .creation-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .creation-text {
+    margin: 0;
+    text-align: center;
+  }
+
+  /* SECTION PRESENTATION / AUTRES PAGES (si utilisées) */
+
+  .presentation {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .autre-photo {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .decor-box {
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .decor-img {
+    width: 100%;
+    max-width: 100%;
+  }
+}

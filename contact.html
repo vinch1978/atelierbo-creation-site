@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Contact – Atelier BO | Objets en bois artisanaux</title>
+
+  <meta name="description" content="Contactez l’Atelier BO pour une question, un projet personnalisé ou une création en bois sur mesure. Atelier artisanal à Serres, dans les Hautes-Alpes.">
+
+   <link rel="canonical" href="https://atelierbo-creation.fr/contact.html">
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Atelier BO">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact – Atelier BO | Objets en bois artisanaux">
+  <meta property="og:description" content="Une question, un projet personnalisé ou une création en bois sur mesure ? Contactez l’Atelier BO à Serres, dans les Hautes-Alpes.">
+  <meta property="og:url" content="https://atelierbo-creation.fr/contact.html">
+  <meta property="og:image" content="https://atelierbo-creation.fr/logo.png">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact – Atelier BO | Objets en bois artisanaux">
+  <meta name="twitter:description" content="Contactez l’Atelier BO pour vos projets de créations en bois artisanales.">
+  <meta name="twitter:image" content="https://atelierbo-creation.fr/logo.png">
+
+  <link rel="stylesheet" href="style.css"> <!-- Lien vers le CSS -->
+</head>
+<body>
+  <!-- Lien d'évitement pour aller directement au contenu principal -->
+  <a href="#contenu-principal" class="skip-link">Aller au contenu principal</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-top">
+      <div class="logo">
+        <div class="logo-img">
+          <img src="logo.png" alt="BO – Objets en bois écoresponsables">
+        </div>
+        <div class="logo-text">
+          <h1>BO – Objets en bois écoresponsables</h1>
+          <p>Atelier artisanal à Serres, Hautes-Alpes</p>
+        </div>
+      </div>
+
+      <!-- Ici le menu -->
+      <nav class="main-nav" aria-label="Navigation principale du site">
+        <div class="dropdown">
+          <button type="button" class="dropdown-button">Menu ▼</button>
+          <ul class="dropdown-menu"> 
+            <li><a href="acceuil.html">Accueil</a></li>
+            <li><a href="boule-noel.html">Boules de Noël</a></li>
+            <li><a href="boules-noel-personnalisable.html">Boules de Noël personnalisable</a></li>
+            <li><a href="boules-noel-personnalisees.html">Boules de Noël personnalisées</a></li>
+            <li><a href="bougeoire.html">Bougeoir</a></li> 
+            <li><a href="decorations-noel.html">Décorations de Noël</a></li>
+            <li><a href="autres-creations.html">Autres créations</a></li> 
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div> <!-- fermeture .container header-top -->
+  </header>
+
+  <main id="contenu-principal" tabindex="-1">
+    <section id="contact" aria-labelledby="titre-contact">
+      <div class="section-inner">
+        <h2 id="titre-contact">Contact</h2>
+        <p>
+          Une question sur nos créations en bois, un projet personnalisé ou simplement l’envie d’échanger avec l’atelier ?
+          N’hésitez pas à nous écrire. Nous serons ravis de vous répondre et de vous accompagner dans votre idée.
+        </p>
+        <p>
+          Chaque message est lu avec attention et reçoit une réponse rapide.
+        </p>
+
+        <div class="contact-center">
+          <a href="mailto:vcreabois@gmail.com" class="btn-contact">Envoyer un email</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© BO – Atelier d’objets en bois écoresponsables, Serres, Hautes-Alpes.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const dropdown = document.querySelector('.dropdown');
+      const button = dropdown.querySelector('.dropdown-button');
+
+      // ouvrir / fermer au clic sur "Menu"
+      button.addEventListener('click', function (e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('open');
+      });
+
+      // fermer si on clique ailleurs dans la page
+      document.addEventListener('click', function () {
+        dropdown.classList.remove('open');
+      });
+
+      // empêcher la fermeture immédiate quand on clique dans le menu
+      const menu = dropdown.querySelector('.dropdown-menu');
+      menu.addEventListener('click', function (e) {
+        e.stopPropagation();
+      });
+    });
+  </script>
+
+</body>
+</html>
