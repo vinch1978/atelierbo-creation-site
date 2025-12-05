@@ -278,6 +278,18 @@ main {
   margin-bottom: 15px;
 }
 
+/*------ lien page accueil------*/
+.lien-noir {
+  color: #000;
+ text-decoration: underline;
+   font-weight: 600;
+}
+
+.lien-noir:hover {
+  color: #333;
+}
+
+
 /* --- titres --- */
 .machine-box h3 {
   margin-bottom: 10px;
@@ -547,6 +559,24 @@ main h2 {
 
 
 /*--------  page decorations de noel  ----------*/
+
+.page-title {
+  text-align: center;
+}
+
+.intro {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.lien-internal-1 {
+  text-align: center; /* centre la phrase */
+}
+
+.lien-internal-1 a {
+  color: #000;
+  text-decoration: underline; /* souligne uniquement les liens */
+}
 
 /* Bloc image + texte côte à côte */
 .decor-box {
