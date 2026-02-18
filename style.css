@@ -1,23 +1,53 @@
-/* ------------------------ */
-/* RESET SIMPLIFIÉ          */
-/* ------------------------ */
+/* ============================================================
+   ATELIER BO — STYLE.CSS (VERSION PROPRE + COMMENTÉE)
+   ------------------------------------------------------------
+   Objectifs de cette version :
+   ✅ Style global cohérent
+   ✅ Corrections des pages (Noël / Mode / Papeterie / Accueil)
+   ✅ ZÉRO CADRE partout (sauf menu déroulant)
+   ✅ Responsive regroupé
+   ------------------------------------------------------------
+   Palette :
+   - Fond général         : #F5EFE6
+   - Header + Footer      : #E4D5C7
+   - Vert (accent)        : #5C8F7B
+   - Texte principal      : #2C3E3A
+   ============================================================ */
+
+
+/* ============================================================
+   0) RESET
+   Neutralise marges/paddings par défaut, et sécurise les tailles
+   ============================================================ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+
+/* ============================================================
+   1) BASE DU SITE (typographie + couleurs)
+   ============================================================ */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  background-color: #F5EFE6;   /* beige clair */
+  background-color: #F5EFE6;
   color: #2C3E3A;
 }
 
-/* ------------------------ */
-/* LIEN D’ÉVITEMENT         */
-/* ------------------------ */
+/* Empêche les images de déborder dans leur conteneur */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* ============================================================
+   2) ACCESSIBILITÉ : lien "Aller au contenu"
+   Visible au focus clavier (Tab)
+   ============================================================ */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -29,47 +59,81 @@ body {
   transition: top 0.2s;
   border-radius: 4px;
 }
-
 .skip-link:focus {
   top: 10px;
 }
 
-/* ------------------------ */
-/* EN-TÊTE                  */
-/* ------------------------ */
-.site-header {
-  background-color: #E4D5C7;   /* beige sable */
-  padding: 10px 0;             /* bandeau plus fin */
-  border-bottom: 4px solid #5C8F7B;
-  position: relative;          /* pour positionner le logo */
-}
 
+/* ============================================================
+   3) CONTENEURS GÉNÉRAUX
+   - .container : header/footer
+   - .section-inner : contenu principal
+   ============================================================ */
 .container {
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
   max-width: 1200px;
-  margin-left: 80px;
-  margin-right: 80px;
+  margin: 0 auto;
+
+  /* look aéré */
+  padding: 0 80px;
 }
 
-/* ligne du haut : logo + menu */
+.section-inner {
+  padding: 40px 0;
+  margin: 0 40px;
+
+  /* Justify : OK sur desktop, peut être “dense” sur mobile */
+  text-align: justify;
+}
+
+/* Main transparent */
+main {
+  background: transparent;
+  padding-top: 20px;
+}
+main section {
+  background: transparent;
+}
+
+
+/* ============================================================
+   4) HEADER / FOOTER
+   ============================================================ */
+.site-header {
+  background-color: #E4D5C7;
+  padding: 10px 0;
+  border-bottom: 4px solid #5C8F7B;
+  position: relative;
+}
+
+.site-footer {
+  background-color: #E4D5C7;
+  border-top: 4px solid #5C8F7B;
+  text-align: center;
+  padding: 20px 0;
+  color: #2C3E3A;
+}
+
+/* Header en pleine largeur */
+.site-header,
+.site-footer,
+.hero {
+  width: 100%;
+}
+
+/* ============================================================
+   5) HEADER : LOGO + TEXTE
+   ============================================================ */
 .header-top {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;  /* évite le centrage vertical gênant */
+  align-items: flex-start;
 }
 
 .logo {
   position: relative;
-  padding-left: 260px;   /* on laisse de la place pour le logo à gauche */
-  min-height: 130px;     /* hauteur mini du bandeau */
-}
-
-.logo-mark {
-  font-size: 40px;
-  font-weight: bold;
-  color: #5C8F7B;
-  margin-right: 15px;
+  padding-left: 260px; /* place pour l’image à gauche */
+  min-height: 130px;
 }
 
 .logo-text h1 {
@@ -83,40 +147,25 @@ body {
   opacity: 0.8;
 }
 
-/* image du logo */
+/* Logo grand (desktop) */
 .logo-img img {
-  height: 350px;    /* logo bien grand */
+  height: 350px;
   width: auto;
   position: absolute;
-  left: 0;
-  bottom: -110px;   /* le fait dépasser sous le bandeau */
-}
-
-main {
-  padding-top: 20px;  /* compense la hauteur du logo */
-}
-
-
-/* ========================= */
-/* MENU DEROULANT=========== */
-/* ========================= */
-
-.main-nav {
-  margin-left: auto;
-}
-
-/* conteneur du menu */
-.dropdown {
-  position: relative;
-}
-
-.logo-img img {
-  height: 350px;        /* adapte selon ton logo */
-  width: auto;         /* garde les proportions */
+  left: -80px;
+  bottom: -110px;
   display: block;
 }
 
-/* bouton */
+
+/* ============================================================
+   6) MENU DÉROULANT + SOUS-MENU
+   (c’est le seul “cadre” qu’on conserve)
+   ============================================================ */
+.main-nav { margin-left: auto; }
+.dropdown { position: relative; }
+
+/* Bouton "Menu ▼" */
 .dropdown-button {
   cursor: pointer;
   background-color: #5C8F7B;
@@ -125,89 +174,73 @@ main {
   border-radius: 6px;
   border: none;
   font-size: 16px;
-  display: inline-block;
+  user-select: none;
 }
 
-/* menu caché */
+/* Menu principal */
 .dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
   right: 0;
+
   background-color: #F5EFE6;
   border: 2px solid #5C8F7B;
   border-radius: 6px;
-  padding: 10px 0;
+  padding: 8px 0;
   min-width: 220px;
   list-style: none;
   z-index: 999;
 }
 
-/* liens du menu */
-.dropdown-menu li a {
+/* Affichage via JS */
+.dropdown.open .dropdown-menu { display: block; }
+
+.dropdown-menu li a,
+.submenu-button {
   display: block;
+  width: 100%;
   padding: 10px 15px;
   text-decoration: none;
-  color: #2C3E3A;
-}
-
-/* au clic → classe .open s’applique */
-.dropdown.open .dropdown-menu {
-  display: block;
-}
-
-/* bouton "Menu ▼" */
-.dropdown-button {
-  cursor: pointer;
-  background-color: #5C8F7B;
-  color: #FFFFFF;
-  padding: 6px 10px;
-  border-radius: 4px;
-  user-select: none;
-  font-size: 16px;
-  display: inline-block;
+  background: transparent;
   border: none;
-}
-
-/* sous-menu vertical (caché par défaut) */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: #F5EFE6;   /* fond du menu en beige clair */
-  border: 2px solid #5C8F7B;
-  border-radius: 6px;
-  padding: 10px 0;
-  min-width: 220px;
-  z-index: 999;
-}
-
-.dropdown-menu li a {
-  display: block;
-  padding: 10px 15px;
-  text-decoration: none;
+  text-align: left;
+  font: inherit;
   color: #2C3E3A;
+  cursor: pointer;
 }
 
 .dropdown-menu li a:hover,
-.dropdown-menu li a:focus {
+.submenu-button:hover {
   background-color: #5C8F7B;
   color: #FFFFFF;
 }
 
-/* affichage du menu via JS (classe .open) */
-.dropdown.open .dropdown-menu {
-  display: block;
+.has-submenu { position: relative; }
+
+.submenu {
+  display: none;
+  list-style: none;
+  padding: 6px 0;
+  margin: 0;
+  border-top: 1px solid #E4D5C7; /* séparateur sous-menu */
 }
 
-/* ------------------------ */
-/* BANNIÈRE / HERO          */
-/* ------------------------ */
+.has-submenu.sub-open > .submenu { display: block; }
+
+.submenu li a {
+  padding-left: 28px;
+  font-size: 15px;
+}
+
+
+/* ============================================================
+   7) HERO
+   ============================================================ */
 .hero {
-  padding: 0;
   text-align: center;
-  background-color: #E4D5C7;  
+  background-color: #E4D5C7;
+  padding: 20px 0;
 }
 
 .hero-content h2 {
@@ -232,270 +265,168 @@ main {
   font-weight: bold;
   transition: background 0.2s;
 }
-
 .btn-primary:hover,
 .btn-primary:focus {
   background-color: #477060;
 }
 
 
-/* ------------------------ */
-/* CONTENU PRINCIPAL        */
-/* ------------------------ */
-/* --- conteneur des deux machines cote a cote --- */
-
-.section-inner {
-  padding: 40px 0;
-  margin-left: 40px;
-  margin-right: 40px;
-  text-align: justify;
+/* ============================================================
+   8) CAROUSEL (accueil)
+   ============================================================ */
+.hero-carousel {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 12px;
 }
 
+.carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background-color: #F5EFE6;
+  border: 2px solid #5C8F7B;
+}
 
-.machines-grid {
+.carousel-track {
   display: flex;
-  gap: 40px;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap; /* pour mobile */
+  transition: transform 400ms ease;
+  will-change: transform;
 }
 
-/* --- chaque bloc machine page acceuil --- */
-.machine-box {
-  flex: 1;
-  min-width: 300px;
-  background-color: #F5EFE6; /* beige clair */
-  padding: 20px;
-  border-radius: 8px;
-  border: 2px solid #E4D5C7;
+.carousel-slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* --- image --- */
-.machine-img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  margin-bottom: 15px;
+.carousel-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
-/*------ lien page accueil------*/
-.lien-noir {
-  color: #000;
- text-decoration: underline;
-   font-weight: 600;
-}
-
-.lien-noir:hover {
-  color: #333;
-}
-
-
-/* --- titres --- */
-.machine-box h3 {
-  margin-bottom: 10px;
-  color: #5C8F7B;
-}
-
-/* --- listes --- */
-.machine-box ul {
-  margin-left: 1.5em;
-  margin-bottom: 15px;
-}
-
-/* --- responsive : mobile --- */
-@media (max-width: 768px) {
-  .machines-grid {
-    flex-direction: column;
-  }
-}
-
-
-/* Alternance de fonds pour les sections */
-main section:nth-of-type(odd) {
-  background-color: #F5EFE6;   /* beige clair */
-}
-
-main section:nth-of-type(even) {
-  background-color: #E4D5C7;   /* beige sable */
-}
-
-main h2 {
+/* Boutons carousel */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  cursor: pointer;
+  background: rgba(92, 143, 123, 0.9);
+  color: #fff;
   font-size: 28px;
-  color: #5C8F7B;
-  margin-bottom: 10px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+}
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+
+/* Dots */
+.carousel-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
 }
 
-/* ------------------------ */
-/* ACCESSIBILITÉ FOCUS      */
-/* ------------------------ */
-:focus {
-  outline: 3px solid #2C3E3A;
-  outline-offset: 3px;
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: rgba(44, 62, 58, 0.35);
+}
+.dot.is-active {
+  background: rgba(44, 62, 58, 0.95);
 }
 
-/* ------------------------ */
-/* PIED DE PAGE             */
-/* ------------------------ */
-.site-footer {
-  text-align: center;
-  padding: 20px 0;
-  background-color: #E4D5C7;  /* rappel du beige sable */
-  border-top: 4px solid #5C8F7B;
-  color: #2C3E3A;
-}
 
-/* bouton pour envoyer mail*/
-.btn-contact {
-  display: inline-block;
-  background-color: #5C8F7B;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.2s;
-}
+/* ============================================================
+   9) UTILITAIRES
+   ============================================================ */
+.text-center { text-align: center; }
 
-.btn-contact:hover {
-  background-color: #477060;
-}
 
-.contact-center {
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-/* ====== SECTION CREATIONS ====== */
+/* ============================================================
+   10) SECTION "CREATIONS" (image + texte alternés)
+   ============================================================ */
 .creation-block {
   display: flex;
-  align-items: center;         
-  justify-content: center;     
-  gap: 25px;                   
-  margin: 40px auto;           
-  max-width: 1000px;           
+  align-items: center;
+  gap: 25px;
+  margin: 40px auto;
+  max-width: 1000px;
+}
+
+.creation-block figure {
+  flex: 0 0 40%;
+  max-width: 320px;
+  margin: 0;
 }
 
 .creation-img {
-  width: 40%;
-  max-width: 320px;
-  height: auto;
+  width: 100%;
+  display: block;
   border-radius: 8px;
   border: 2px solid #E4D5C7;
-  flex-shrink: 0;
 }
 
 .creation-text {
   flex: 1;
-  text-align: center;         
+  text-align: left;
 }
 
-.creation-block.left {
-  flex-direction: row;
+.creation-block.left { flex-direction: row; }
+.creation-block.right { flex-direction: row-reverse; }
+
+
+/* ============================================================
+   11) BLOC "PRESENTATION" (intro de page / texte)
+   ============================================================ */
+.presentation {
+  text-align: center;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 1100px;
+
+  background-color: #F5EFE6;
+  border: 2px solid #E4D5C7;
+  border-radius: 10px;
 }
-
-.creation-block.right {
-  flex-direction: row-reverse;
-}
-
-.creation-block.left .creation-text {
-  margin-left: 10px;
-}
-
-.creation-block.right .creation-text {
-  margin-right: 10px;
-}
-
-
-/* responsive : sur mobile, tout s'empile */
-@media (max-width: 768px) {
-  .creation-block {
-    flex-direction: column;
-     max-width: 100%;
-  }
-
-  .creation-text {
-    margin: 0;
-  }
-
-  .creation-img {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-/*---page boule personnalisable---*/
 
 .presentation img {
-  text-align: center;  
-  width: 200px !important; /* Taille de l’image */
-  height: auto;      /* Garde les proportions */
-  border-radius: 8px;  /* Optionnel, joli arrondi */
-  margin-top: 20px;
-}
-
-.presentation{
-  text-align: center;
-  margin-left: 100px;
-  margin-right: 100px;
-}
-
-/* Conteneur global */
-.autre-photo {
-  max-width: 1100px;
-  margin: 40px auto;
-}
-
-/* C’est le FIGURE qui devient une grille */
-.autre-photo figure {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 colonnes => 2 lignes avec 10 images */
-  gap: 20px;
-  align-items: start;
-}
-
-/* Les images occupent chaque cellule */
-.autre-photo figure img {
-  width: 100%;
-  height: auto;
+  width: 200px;
   border-radius: 8px;
-  border: 2px solid #E4D5C7;
-  object-fit: cover;
-}
-
-/* La légende en dessous, sur toute la largeur */
-.autre-photo figure figcaption {
-  grid-column: 1 / -1;       /* prend toute la largeur de la grille */
-  text-align: center;
   margin-top: 10px;
 }
 
-/* bouton amazon */
-.amazon-btn-wrapper {
-  text-align: center;
-  margin: 30px 0;
+/* Pages où tu ne veux pas l’effet “carte” */
+body.page-simple .presentation,
+body.page-mode .presentation {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
 }
 
-/* Bouton Amazon personnalisé */
-.amazon-btn {
-  display: inline-block;
-  background-color: #5C8F7B;     /* ton vert foncé */
-  color: #ffffff;
-  padding: 12px 25px;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: 0.2s ease-in-out;
-  border: 2px solid #477060;
-}
 
-.amazon-btn:hover {
-  background-color: #477060;     /* vert plus sombre */
-  transform: scale(1.05);        /* petit zoom élégant */
-}
-
-/*----- page boule noel tableau differents design------*/
-/* ----- Galerie Amazon ----- */
+/* ============================================================
+   12) GALERIE PRODUITS (Amazon)
+   ============================================================ */
 .amazon-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -513,17 +444,9 @@ main h2 {
 }
 
 .amazon-item img {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-/*--------mets toutes les photos a la meme taill-------*/
-.amazon-item img {
   width: 200px;
   height: 200px;
-  object-fit: cover;   /* recadre proprement sans déformer */
+  object-fit: cover;
   border-radius: 8px;
   margin-bottom: 15px;
   display: block;
@@ -531,8 +454,7 @@ main h2 {
   margin-right: auto;
 }
 
-
-/* ----- Bouton Amazon petit ----- */
+/* Bouton Amazon (petit - cartes) */
 .amazon-btn-small {
   display: inline-block;
   padding: 8px 16px;
@@ -543,255 +465,313 @@ main h2 {
   border-radius: 6px;
   transition: background 0.2s;
 }
+.amazon-btn-small:hover,
+.amazon-btn-small:focus {
+  background-color: #477060;
+}
 
-.amazon-btn-small:hover {
+/* Wrapper (centre un bouton isolé) */
+.amazon-btn-wrapper {
+  width: 100%;
+  text-align: center;
+  margin: 30px 0;
+}
+
+/* Bouton Amazon (grand format - pochettes / pages mono-produit) */
+.amazon-btn {
+  display: inline-block;
+  padding: 14px 28px;
   background-color: #5C8F7B;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: background 0.2s, transform 0.1s;
+}
+.amazon-btn:hover,
+.amazon-btn:focus {
+  background-color: #477060;
+  transform: translateY(-1px);
 }
 
-/*--------- page bougeoir,boule noel pour les 2 blocs sans puce------*/
-.listing {
-  margin-left: 0;
-  padding-left: 0;
-  line-height: 1.7;
-  text-align: center;
 
-}
-
-
-/*--------  page decorations de noel  ----------*/
-
-.page-title {
-  text-align: center;
-}
-
-.intro {
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
-.lien-internal-1 {
-  text-align: center; /* centre la phrase */
-}
-
-.lien-internal-1 a {
-  color: #000;
-  text-decoration: underline; /* souligne uniquement les liens */
-}
-
-/* Bloc image + texte côte à côte */
+/* ============================================================
+   13) DÉCORATIONS DE NOËL : image gauche / texte droite
+   ============================================================ */
 .decor-box {
   display: flex;
-  gap: 40px; /* au lieu de 25 */
   align-items: center;
-  margin: 40px 20px; /* cohérence */
+  gap: 40px;
+  margin: 60px 0;
 }
 
-/* Image */
-.decor-img {
-  width: 55%;           /* un peu plus large dans le bloc */
-  max-width: 520px;     /* limite haute confortable sur grand écran */
-  height: auto;
-  border-radius: 8px;
-  border: 2px solid #E4D5C7;
+.decor-box figure {
+  flex: 0 0 40%;
+  text-align: center;
 }
 
-/* Texte */
 .decor-text {
   flex: 1;
-  text-align: justify;
-   padding-right: 40px; /* espace à droite */
 }
 
-.decor-text ul {
-  margin-left: 20px;
-  margin-bottom: 15px;
+
+/* ============================================================
+   14) BOULES PERSONNALISABLES (body.page-boules-perso)
+   Galerie “autre-photo” : IMPORTANT -> grid sur FIGURE
+   ============================================================ */
+.page-boules-perso .autre-photo figure {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 60px auto;
 }
 
-.decor-text li {
-  margin-bottom: 5px;
+.page-boules-perso .autre-photo figure a {
+  display: block;
 }
 
-/* Adaptation mobile */
+.page-boules-perso .autre-photo figure img {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+}
+
+/* Galerie Amazon spécifique boules personnalisables : 3 colonnes */
+.page-boules-perso .amazon-gallery {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1100px;
+  margin: 60px auto;
+}
+
+
+/* ============================================================
+   15) PRÉSENTATION : 3 PHOTOS CÔTE À CÔTE
+   (utilisée sur Mode / Papeterie / etc.)
+   ============================================================ */
+.presentation-boules-personnalise .triple-photos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.presentation-boules-personnalise .triple-photos a {
+  display: block;
+}
+
+.presentation-boules-personnalise .triple-photos img {
+  width: 260px;
+  max-width: 100%;
+  display: block;
+}
+
+/* Légende sous les 3 photos : force une ligne en dessous */
+.presentation-boules-personnalise .triple-photos figcaption {
+  flex-basis: 100%;
+  text-align: center;
+  margin-top: 12px;
+  font-style: italic;
+}
+
+
+/* ============================================================
+   16) PAGE : Boules personnalisées (body.page-boules-personnalisees)
+   Bandeau 3 photos + légende centrée
+   ============================================================ */
+.page-boules-personnalisees .presentation-boules-personnalise figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 20px auto;
+}
+
+.page-boules-personnalisees .presentation-boules-personnalise figure a {
+  display: block;
+}
+
+.page-boules-personnalisees .presentation-boules-personnalise figure img {
+  width: 260px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.page-boules-personnalisees .presentation-boules-personnalise figcaption {
+  text-align: center;
+  margin-top: 12px;
+  font-style: italic;
+}
+
+
+/* ============================================================
+   17) PAGE MODE : espace entre Boucles et Pochettes
+   ============================================================ */
+.page-mode #pochettes {
+  margin-top: 60px;
+}
+
+
+/* ============================================================
+   18) ACCUEIL : MACHINES (2 colonnes desktop, 1 colonne mobile)
+   ============================================================ */
+.machines-grid {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.machine-box {
+  flex: 1 1 420px;              /* largeur mini avant de passer à la ligne */
+  max-width: calc(50% - 20px);  /* 2 colonnes si la place le permet */
+}
+
+
+/* ============================================================
+   19) RESPONSIVE (regroupé)
+   ============================================================ */
+
+/* Tablette */
+@media (max-width: 900px) {
+
+  /* boules personnalisables : galerie photos */
+  .page-boules-perso .autre-photo figure {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* boules personnalisables : galerie amazon */
+  .page-boules-perso .amazon-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* machines : une colonne */
+  .machine-box {
+    max-width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  .page-boules-perso .autre-photo figure {
+    grid-template-columns: 1fr;
+  }
+
+  .page-boules-perso .amazon-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Confort : 3 photos en colonne sur mobile */
 @media (max-width: 768px) {
-  .decor-box {
+  .presentation-boules-personnalise .triple-photos {
     flex-direction: column;
   }
 
-  .decor-img {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
-/*------Boule noel personnalisé----------*/
-
-.presentation-boules-personnalise {
-  display: flex;
-  justify-content: center; /* centre l'ensemble */
-  align-items: center;
-  gap: 150px; /* espace entre les images */
-  margin: 20px 0;
-}
-
-/* On annule les styles globaux qui étirent les images */
-.presentation-boules-personnalise img {
-  width: auto !important;   /* garde la taille d’origine */
-  height: auto !important;
-  max-width: 180px;         /* limite la taille si besoin (tu peux ajuster) */
-  border-radius: 8px;       /* optionnel : joli arrondi */
-}
-/* ============================= */
-/*  FIX RESPONSIVE SECTION CREATIONS  */
-/* ============================= */
-
-/* ============================= */
-/*   RESPONSIVE GLOBAL (< 768px) */
-/* ============================= */
-
-@media (max-width: 768px) {
-
-  /* Empêcher le scroll horizontal */
-  html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+  /* boules personnalisées : images un peu plus petites */
+  .page-boules-personnalisees .presentation-boules-personnalise figure img {
+    width: 200px;
   }
 
-  /* Conteneur plus simple sur mobile */
+  /* mode pochettes : images un peu plus petites (hérite du triple-photos) */
+  .page-mode #pochettes .triple-photos img {
+    width: 200px;
+  }
+}
+/* Mobile: padding réduit */
+@media (max-width: 600px) {
   .container {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
     padding: 0 16px;
   }
+}
+@media (max-width: 600px) {
 
-  /* En-tête : tout centré, plus compact */
+  .logo {
+    padding-left: 0;
+    min-height: auto;
+  }
+
+  .logo-img img {
+    position: static;   /* plus d’absolu */
+    height: 140px;
+    margin: 0 auto 10px;
+    display: block;
+  }
+
   .header-top {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
+}
 
-  .logo {
-    padding-left: 0;
-    min-height: auto;
-    margin-bottom: 10px;
-  }
 
-  .logo-img img {
-    position: static;
-    height: 130px;
-    width: auto;
-    margin: 5px auto 10px auto;
-    display: block;
-  }
+/* ============================================================
+   20) 🔥 MODE "ZÉRO CADRE" (GLOBAL)
+   BUT : enlever tous les cadres partout…
+   SAUF le menu déroulant (qu’on garde)
+   ------------------------------------------------------------
+   On écrase :
+   - border
+   - background “cartes”
+   - box-shadow
+   - outline
+   - border-radius
+   ============================================================ */
 
-  .logo-text h1 {
-    font-size: 18px;
-  }
+/* Tout ce qui ressemblait à une “carte” */
+.presentation,
+.amazon-item,
+.machine-box,
+.carousel,
+.creation-img,
+.machine-img {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background: transparent !important;
+}
 
-  .logo-text p {
-    font-size: 13px;
-  }
+/* Toutes les images : jamais de bordure/ombre */
+img {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
 
-  .main-nav {
-    margin-left: 0;
-    margin-top: 10px;
-  }
+/* Neutralise l’effet “cadre arrondi” */
+.presentation,
+.amazon-item,
+.machine-box,
+.carousel,
+img {
+  border-radius: 0 !important;
+}
 
-  /* BOUTON MENU centré */
-  .dropdown {
-    text-align: center;
-  }
+/* Enlève aussi le fond blanc des cartes Amazon */
+.amazon-item {
+  background: transparent !important;
+}
 
-  .dropdown-button {
-    width: auto;
-  }
 
-  .dropdown-menu {
-    right: 50%;
-    transform: translateX(50%);
-    min-width: 220px;
-    max-width: 90vw; /* évite de dépasser la largeur écran */
-  }
+/* ============================================================
+   ✅ EXCEPTION : ON GARDE LE CADRE DU MENU DÉROULANT
+   (re-appliqué ici, après le “zéro cadre”)
+   ============================================================ */
+.dropdown-menu {
+  background-color: #F5EFE6 !important;
+  border: 2px solid #5C8F7B !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+}
 
-  /* HERO plus légère */
-  .hero {
-    padding: 20px 0;
-  }
-
-  .hero-content h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-
-  .hero-content p {
-    font-size: 16px;
-    margin: 0 auto 15px auto;
-    padding: 0 5px;
-  }
-
-  /* Sections : moins de marges latérales */
-  .section-inner {
-    padding: 25px 0;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  /* Grille des machines en colonne */
-  .machines-grid {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .machine-box {
-    min-width: auto;
-  }
-
-  /* ====== SECTION CREATIONS ====== */
-
-  .creation-block,
-  .creation-block.left,
-  .creation-block.right {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 100%;
-    margin: 25px auto;
-    gap: 15px;
-  }
-
-  .creation-img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
-
-  .creation-text {
-    margin: 0;
-    text-align: center;
-  }
-
-  /* SECTION PRESENTATION / AUTRES PAGES (si utilisées) */
-
-  .presentation {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  .autre-photo {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 15px;
-    padding: 0 10px;
-  }
-
-  .decor-box {
-    flex-direction: column;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  .decor-img {
-    width: 100%;
-    max-width: 100%;
-  }
+.submenu {
+  border-top: 1px solid #E4D5C7 !important;
 }

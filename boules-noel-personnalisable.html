@@ -8,7 +8,7 @@
 
   <meta name="description" content="Boules de Noël en bois personnalisables avec le prénom de votre choix. Gravure fine, flocons de neige, essences de bois chêne, noyer ou hêtre. Création artisanale fabriquée dans l’Atelier BO, dans les Hautes-Alpes.">
 
-   <link rel="canonical" href="https://www.atelierbo-creation.fr/boules-noel-personnalisable.html">
+  <link rel="canonical" href="https://www.atelierbo-creation.fr/boules-noel-personnalisable.html">
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="Atelier BO">
@@ -17,6 +17,7 @@
   <meta property="og:description" content="Boules de Noël en bois personnalisables avec le prénom de votre choix, gravées finement et disponibles en chêne, noyer ou hêtre. Une décoration unique et artisanale.">
   <meta property="og:url" content="https://www.atelierbo-creation.fr/boules-noel-personnalisable.html">
   <meta property="og:image" content="https://www.atelierbo-creation.fr/image/boule-perso.webp">
+  <meta property="og:image:alt" content="Boule de Noël en bois personnalisable avec prénom – Atelier BO">
   <meta property="og:locale" content="fr_FR">
 
   <!-- Twitter Card -->
@@ -25,35 +26,36 @@
   <meta name="twitter:description" content="Boules de Noël en bois personnalisables avec prénom, gravées et fabriquées à la main dans les Hautes-Alpes.">
   <meta name="twitter:image" content="https://www.atelierbo-creation.fr/image/boule-perso.webp">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Boules de Noël personnalisables en bois avec prénom",
-  "image": [
-    "https://www.atelierbo-creation.fr/image/boule-perso.webp"
-  ],
-  "description": "Boules de Noël en bois personnalisables avec le prénom de votre choix, gravure fine et essences de bois chêne, noyer ou hêtre. Création artisanale fabriquée dans les Hautes-Alpes.",
-  "brand": {
-    "@type": "Brand",
-    "name": "Atelier BO"
-  },
-  "url": "https://www.atelierbo-creation.fr/boules-noel-personnalisable.html",
+  <!-- Données structurées -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Boules de Noël personnalisables en bois avec prénom",
+    "image": [
+      "https://www.atelierbo-creation.fr/image/boule-perso.webp"
+    ],
+    "description": "Boules de Noël en bois personnalisables avec le prénom de votre choix, gravure fine et essences de bois chêne, noyer ou hêtre. Création artisanale fabriquée dans les Hautes-Alpes.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Atelier BO"
+    },
+    "sku": "B0G2ZBGGG3",
+    "url": "https://www.atelierbo-creation.fr/boules-noel-personnalisable.html",
     "offers": {
-    "@type": "Offer",
-    "url": "https://www.amazon.fr/dp/B0G2ZVFM3G", 
-    "availability": "https://schema.org/InStock",
-    "priceCurrency": "EUR",
-    "price" : "18"
+      "@type": "Offer",
+      "url": "https://www.amazon.fr/dp/B0G2ZBGGG3",
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "EUR",
+      "price": "18"
+    }
   }
-}
-</script>
-
+  </script>
 
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- Lien d'évitement pour aller directement au contenu principal -->
+
+<body class="page-boules-perso">
   <a href="#contenu-principal" class="skip-link">Aller au contenu principal</a>
 
   <header class="site-header" role="banner">
@@ -68,18 +70,42 @@
         </div>
       </div>
 
-      <!-- Menu -->
       <nav class="main-nav" aria-label="Navigation principale du site">
         <div class="dropdown">
-          <button type="button" class="dropdown-button">Menu ▼</button>
-          <ul class="dropdown-menu">
+          <button type="button" class="dropdown-button" aria-expanded="false" aria-controls="menu-principal">
+            Menu ▼
+          </button>
+
+          <ul class="dropdown-menu" id="menu-principal">
             <li><a href="index.html">Accueil</a></li>
-            <li><a href="boule-noel.html">Boules de Noël</a></li>
-            <li><a href="boules-noel-personnalisable.html">Boules de Noël personnalisable</a></li>
-            <li><a href="boules-noel-personnalisees.html">Boules de Noël personnalisées</a></li>
-            <li><a href="bougeoire.html">Bougeoir</a></li>
-            <li><a href="decorations-noel.html">Décorations de Noël</a></li>
-            <li><a href="autres-creations.html">Autres créations</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+
+            <li class="has-submenu">
+              <button type="button" class="submenu-button" aria-expanded="false">
+                Mode ▸
+              </button>
+              <ul class="submenu">
+                <li><a href="mode.html#boucles-oreilles">Boucles d’oreilles</a></li>
+                <li><a href="mode.html#pochettes">Pochettes</a></li>
+              </ul>
+            </li>
+
+            <li><a href="papeterie.html">Papeterie</a></li>
+            <li><a href="decoration.html">Décoration</a></li>
+
+            <li class="has-submenu">
+              <button type="button" class="submenu-button" aria-expanded="false">
+                Univers Noël ▸
+              </button>
+              <ul class="submenu">
+                <li><a href="boule-noel.html">Boules de Noël</a></li>
+                <li><a href="boules-noel-personnalisable.html">Boules de Noël personnalisables</a></li>
+                <li><a href="boules-noel-personnalisees.html">Boules de Noël personnalisées</a></li>
+                <li><a href="bougeoire.html">Bougeoirs</a></li>
+                <li><a href="decorations-noel.html">Décorations de Noël</a></li>
+              </ul>
+            </li>
+
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
@@ -91,7 +117,7 @@
 
     <div class="presentation">
       <figure>
-        <img src="image/boule-perso.webp" alt="Boule de Noël en bois personnalisable avec prénom">
+        <img src="image/boule-perso.webp" alt="Boule de Noël en bois personnalisable avec prénom" loading="lazy">
         <figcaption>Boules de Noël en bois personnalisables, fabriquées dans l’Atelier BO.</figcaption>
       </figure>
 
@@ -135,7 +161,7 @@
           <img src="image/boule-person/maman1.webp" alt="Boules de Noël personnalisables - modèle Maman" loading="lazy">
         </a>
         <a href="image/boule-person/papi1.webp" target="_blank" rel="noopener noreferrer">
-          <img src="image/boule-person/papi1.webp" alt="Boules de Noël personnalisables - modèle Papi">
+          <img src="image/boule-person/papi1.webp" alt="Boules de Noël personnalisables - modèle Papi" loading="lazy">
         </a>
         <a href="image/boule-person/parrain1.webp" target="_blank" rel="noopener noreferrer">
           <img src="image/boule-person/parrain1.webp" alt="Boules de Noël personnalisables - modèle Parrain" loading="lazy">
@@ -158,12 +184,18 @@
         <a href="image/boule-person/presentation2.webp" target="_blank" rel="noopener noreferrer">
           <img src="image/boule-person/presentation2.webp" alt="Boules de Noël personnalisables - présentation 2" loading="lazy">
         </a>
+
         <figcaption>Exemples de boules de Noël personnalisables créées à l’Atelier BO.</figcaption>
       </figure>
     </div>
 
     <div class="amazon-btn-wrapper">
-      <a href="https://www.amazon.fr/dp/B0G2ZBGGG3" target="_blank" rel="noopener noreferrer" class="amazon-btn">
+      <a
+        href="https://www.amazon.fr/dp/B0G2ZBGGG3"
+        target="_blank"
+        rel="sponsored noopener noreferrer"
+        class="amazon-btn-small"
+      >
         Commander sur Amazon
       </a>
     </div>
@@ -172,30 +204,74 @@
 
   <footer class="site-footer" role="contentinfo">
     <div class="container">
-      <p>© BO – Atelier d’objets en bois écoresponsables, Serres, Hautes-Alpes.</p>
+      <p>
+        © Atelier BO –
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=36%20Promenade%20de%20la%20Digue%2005700%20Serres"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          36 Promenade de la Digue, 05700 Serres
+        </a>
+        – <a href="tel:+33759584175" aria-label="Appeler Atelier BO au 07 59 58 41 75">07 59 58 41 75</a>
+        – <a href="mailto:vcreabois@gmail.com" aria-label="Envoyer un email à vcreabois@gmail.com">vcreabois@gmail.com</a>
+      </p>
+
+      <p>Commande par téléphone ou email (paiement possible par virement) ou via Amazon.</p>
     </div>
   </footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const dropdown = document.querySelector('.dropdown');
-      const button = dropdown.querySelector('.dropdown-button');
+      if (!dropdown) return;
 
-      // ouvrir / fermer au clic sur "Menu"
-      button.addEventListener('click', function (e) {
-        e.stopPropagation();
-        dropdown.classList.toggle('open');
-      });
-
-      // fermer si on clique ailleurs dans la page
-      document.addEventListener('click', function () {
-        dropdown.classList.remove('open');
-      });
-
-      // empêcher la fermeture immédiate quand on clique dans le menu
+      const mainBtn = dropdown.querySelector('.dropdown-button');
       const menu = dropdown.querySelector('.dropdown-menu');
+
+      mainBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const isOpen = dropdown.classList.toggle('open');
+        mainBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          dropdown.classList.remove('open');
+          mainBtn.setAttribute('aria-expanded', 'false');
+
+          dropdown.querySelectorAll('.has-submenu').forEach(item => item.classList.remove('sub-open'));
+          dropdown.querySelectorAll('.submenu-button').forEach(btn => btn.setAttribute('aria-expanded', 'false'));
+        });
+      });
+
       menu.addEventListener('click', function (e) {
         e.stopPropagation();
+      });
+
+      document.addEventListener('click', function () {
+        dropdown.classList.remove('open');
+        mainBtn.setAttribute('aria-expanded', 'false');
+
+        dropdown.querySelectorAll('.has-submenu').forEach(item => item.classList.remove('sub-open'));
+        dropdown.querySelectorAll('.submenu-button').forEach(btn => btn.setAttribute('aria-expanded', 'false'));
+      });
+
+      dropdown.querySelectorAll('.has-submenu').forEach((subItem) => {
+        const subBtn = subItem.querySelector('.submenu-button');
+        if (!subBtn) return;
+
+        subBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          dropdown.querySelectorAll('.has-submenu').forEach(item => {
+            if (item !== subItem) item.classList.remove('sub-open');
+          });
+
+          const isSubOpen = subItem.classList.toggle('sub-open');
+          subBtn.setAttribute('aria-expanded', isSubOpen ? 'true' : 'false');
+        });
       });
     });
   </script>

@@ -8,42 +8,43 @@
 
   <meta name="description" content="Contactez l’Atelier BO pour une question, un projet personnalisé ou une création en bois sur mesure. Atelier artisanal à Serres, dans les Hautes-Alpes.">
 
-   <link rel="canonical" href="https://atelierbo-creation.fr/contact.html">
+  <link rel="canonical" href="https://www.atelierbo-creation.fr/contact.html">
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="Atelier BO">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Contact – Atelier BO | Objets en bois artisanaux">
   <meta property="og:description" content="Une question, un projet personnalisé ou une création en bois sur mesure ? Contactez l’Atelier BO à Serres, dans les Hautes-Alpes.">
-  <meta property="og:url" content="https://atelierbo-creation.fr/contact.html">
-  <meta property="og:image" content="https://atelierbo-creation.fr/logo.webp">
+  <meta property="og:url" content="https://www.atelierbo-creation.fr/contact.html">
+  <meta property="og:image" content="https://www.atelierbo-creation.fr/logo.webp">
+  <meta property="og:image:alt" content="Logo Atelier BO">
   <meta property="og:locale" content="fr_FR">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Contact – Atelier BO | Objets en bois artisanaux">
   <meta name="twitter:description" content="Contactez l’Atelier BO pour vos projets de créations en bois artisanales.">
-  <meta name="twitter:image" content="https://atelierbo-creation.fr/logo.webp">
+  <meta name="twitter:image" content="https://www.atelierbo-creation.fr/logo.webp">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  "name": "Contact – Atelier BO",
-  "url": "https://atelierbo-creation.fr/contact.html",
-  "about": {
-    "@type": "LocalBusiness",
-    "name": "Atelier BO",
-    "url": "https://atelierbo-creation.fr/"
+  <!-- Données structurées -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact – Atelier BO",
+    "url": "https://www.atelierbo-creation.fr/contact.html",
+    "about": {
+      "@type": "LocalBusiness",
+      "name": "Atelier BO",
+      "url": "https://www.atelierbo-creation.fr/"
+    }
   }
-}
-</script>
+  </script>
 
-
-  <link rel="stylesheet" href="style.css"> <!-- Lien vers le CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <!-- Lien d'évitement pour aller directement au contenu principal -->
   <a href="#contenu-principal" class="skip-link">Aller au contenu principal</a>
 
   <header class="site-header" role="banner">
@@ -53,75 +54,149 @@
           <img src="logo.png" alt="BO – Objets en bois écoresponsables">
         </div>
         <div class="logo-text">
-          <h1>BO – Objets en bois écoresponsables</h1>
-          <p>Atelier artisanal à Serres, Hautes-Alpes</p>
+          <p>Atelier BO – Objets en bois artisanaux et écoresponsables</p>
+          <p>Atelier artisanal à Serres, dans les Hautes-Alpes</p>
         </div>
       </div>
 
-      <!-- Ici le menu -->
       <nav class="main-nav" aria-label="Navigation principale du site">
         <div class="dropdown">
-          <button type="button" class="dropdown-button">Menu ▼</button>
-          <ul class="dropdown-menu"> 
+          <button type="button"
+                  class="dropdown-button"
+                  aria-expanded="false"
+                  aria-controls="menu-principal">
+            Menu ▼
+          </button>
+
+          <ul class="dropdown-menu" id="menu-principal">
             <li><a href="index.html">Accueil</a></li>
-            <li><a href="boule-noel.html">Boules de Noël</a></li>
-            <li><a href="boules-noel-personnalisable.html">Boules de Noël personnalisable</a></li>
-            <li><a href="boules-noel-personnalisees.html">Boules de Noël personnalisées</a></li>
-            <li><a href="bougeoire.html">Bougeoir</a></li> 
-            <li><a href="decorations-noel.html">Décorations de Noël</a></li>
-            <li><a href="autres-creations.html">Autres créations</a></li> 
+            <li><a href="a-propos.html">À propos</a></li>
+
+            <li class="has-submenu">
+              <button type="button" class="submenu-button" aria-expanded="false">
+                Mode ▸
+              </button>
+              <ul class="submenu">
+                <li><a href="mode.html#boucles-oreilles">Boucles d’oreilles</a></li>
+                <li><a href="mode.html#pochettes">Pochettes</a></li>
+              </ul>
+            </li>
+
+            <li><a href="papeterie.html">Papeterie</a></li>
+            <li><a href="decoration.html">Décoration</a></li>
+
+            <li class="has-submenu">
+              <button type="button" class="submenu-button" aria-expanded="false">
+                Univers Noël ▸
+              </button>
+              <ul class="submenu">
+                <li><a href="boule-noel.html">Boules de Noël</a></li>
+                <li><a href="boules-noel-personnalisable.html">Boules de Noël personnalisables</a></li>
+                <li><a href="boules-noel-personnalisees.html">Boules de Noël personnalisées</a></li>
+                <li><a href="bougeoire.html">Bougeoirs</a></li>
+                <li><a href="decorations-noel.html">Décorations de Noël</a></li>
+              </ul>
+            </li>
+
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
       </nav>
-    </div> <!-- fermeture .container header-top -->
+    </div>
   </header>
 
   <main id="contenu-principal" tabindex="-1">
     <section id="contact" aria-labelledby="titre-contact">
       <div class="section-inner">
-        <h2 id="titre-contact">Contact</h2>
+        <h1 id="titre-contact" class="text-center">Contact</h1>
+
         <p>
           Une question sur nos créations en bois, un projet personnalisé ou simplement l’envie d’échanger avec l’atelier ?
-          N’hésitez pas à nous écrire. Nous serons ravis de vous répondre et de vous accompagner dans votre idée.
-        </p>
-        <p>
-          Chaque message est lu avec attention et reçoit une réponse rapide.
+          N’hésitez pas à nous contacter : nous serons ravis de vous répondre et de vous accompagner dans votre idée.
         </p>
 
-        <div class="contact-center">
-          <a href="mailto:vcreabois@gmail.com" class="btn-contact">Envoyer un email</a>
-        </div>
+        <p class="text-center">
+          <strong>Email :</strong>
+          <a href="mailto:vcreabois@gmail.com">vcreabois@gmail.com</a>
+          <br>
+          <strong>Téléphone :</strong>
+          <a href="tel:+33759584175">07 59 58 41 75</a>
+        </p>
+
+        <p class="text-center">
+          Commande possible par téléphone ou email (paiement par virement possible), ou via Amazon.
+        </p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer" role="contentinfo">
     <div class="container">
-      <p>© BO – Atelier d’objets en bois écoresponsables, Serres, Hautes-Alpes.</p>
+      <p>
+        © Atelier BO –
+        <a href="https://www.google.com/maps/search/?api=1&query=36%20Promenade%20de%20la%20Digue%2005700%20Serres"
+           target="_blank" rel="noopener noreferrer">
+          36 Promenade de la Digue, 05700 Serres
+        </a>
+        – <a href="tel:+33759584175" aria-label="Appeler Atelier BO au 07 59 58 41 75">07 59 58 41 75</a>
+        – <a href="mailto:vcreabois@gmail.com" aria-label="Envoyer un email à vcreabois@gmail.com">vcreabois@gmail.com</a>
+      </p>
+
+      <p>Commande par téléphone ou email (paiement possible par virement) ou via Amazon.</p>
     </div>
   </footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const dropdown = document.querySelector('.dropdown');
-      const button = dropdown.querySelector('.dropdown-button');
+      if (!dropdown) return;
 
-      // ouvrir / fermer au clic sur "Menu"
-      button.addEventListener('click', function (e) {
-        e.stopPropagation();
-        dropdown.classList.toggle('open');
-      });
-
-      // fermer si on clique ailleurs dans la page
-      document.addEventListener('click', function () {
-        dropdown.classList.remove('open');
-      });
-
-      // empêcher la fermeture immédiate quand on clique dans le menu
+      const mainBtn = dropdown.querySelector('.dropdown-button');
       const menu = dropdown.querySelector('.dropdown-menu');
+
+      mainBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const isOpen = dropdown.classList.toggle('open');
+        mainBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          dropdown.classList.remove('open');
+          mainBtn.setAttribute('aria-expanded', 'false');
+
+          dropdown.querySelectorAll('.has-submenu').forEach(item => item.classList.remove('sub-open'));
+          dropdown.querySelectorAll('.submenu-button').forEach(btn => btn.setAttribute('aria-expanded', 'false'));
+        });
+      });
+
       menu.addEventListener('click', function (e) {
         e.stopPropagation();
+      });
+
+      document.addEventListener('click', function () {
+        dropdown.classList.remove('open');
+        mainBtn.setAttribute('aria-expanded', 'false');
+
+        dropdown.querySelectorAll('.has-submenu').forEach(item => item.classList.remove('sub-open'));
+        dropdown.querySelectorAll('.submenu-button').forEach(btn => btn.setAttribute('aria-expanded', 'false'));
+      });
+
+      dropdown.querySelectorAll('.has-submenu').forEach((subItem) => {
+        const subBtn = subItem.querySelector('.submenu-button');
+        if (!subBtn) return;
+
+        subBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          dropdown.querySelectorAll('.has-submenu').forEach(item => {
+            if (item !== subItem) item.classList.remove('sub-open');
+          });
+
+          const isSubOpen = subItem.classList.toggle('sub-open');
+          subBtn.setAttribute('aria-expanded', isSubOpen ? 'true' : 'false');
+        });
       });
     });
   </script>
